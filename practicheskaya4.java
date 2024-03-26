@@ -1,4 +1,4 @@
-public class Main {
+public class practicheskaya4 {
     public static void main(String[] args)
     {
         printThreeWords();
