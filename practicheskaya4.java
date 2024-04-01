@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class practicheskaya4 {
     public static void main(String[] args)
     {
@@ -7,7 +9,7 @@ public class practicheskaya4 {
         compareNumbers();
         boolean isSumInRange = isSumInRange(5, 3);
         isNumberPositive(5);
-        boolean isNumberNegative = isNumberNegative(-5);
+        boolean isNumberNegative = isNumberNegative(5);
         repeatString("Hello", 3);
         boolean isYearLeapYear = isYearLeapYear(2024);
         int[] array = {0, 1, 0, 1, 0};
@@ -61,12 +63,10 @@ public class practicheskaya4 {
     }
 
     public static void isNumberPositive(int number) {
-        if (number > 0) {
-            System.out.println("Положительное число");
-        } else if (number < 0) {
-            System.out.println("Отрицательное число");
+        if (number >= 0) {
+            System.out.println(number + " is a positive number.");
         } else {
-            System.out.println("Ноль");
+            System.out.println(number + " is a negative number.");
         }
     }
 
@@ -95,22 +95,38 @@ public class practicheskaya4 {
     }
 
     public static void fillArrayWithNumbers(int[] array) {
+        int[] array1 = new int[100];
         for (int i = 0; i < array.length; i++) {
             array[i] = i + 1;
         }
-    }
-
-    public static void multiplySmallNumbers(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] < 6) {
-                array[i] *= 2;
-            }
+        for (int value : array) {
+            System.out.println(value);
         }
     }
 
+
+    public static void multiplySmallNumbers(int[] array) {
+        int[] numbers = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] < 6) {
+                numbers[i] *= 2;
+            }
+        }
+        System.out.println(Arrays.toString(numbers));
+    }
+
+
     public static void fillDiagonalWithOnes(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            array[i] = 1;
+        int size = 5;
+        int[][] array2 = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            array2[i][i] = 1;
+        }
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print(array2[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 
